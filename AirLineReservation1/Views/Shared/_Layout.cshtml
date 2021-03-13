@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Airline</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="~/css/AdminLTE.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link href="~/images/Airplane-PNG0.png" rel="shortcut icon">
+
+
+</head>
+<body>
+
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+    <!-- MENU -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+
+                        <a href="#index" class="navbar-brand">Fly <span>.</span> Emirates</a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-collapse collapse" id="mobile_menu">
+                    <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav navbar-nav-first">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Reservation">Reservation</a>
+                            </li>
+                          
+
+                            @*<li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="Flights">Flights</a>
+                            </li>*@
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            </li>
+
+                            @*<li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Comments" asp-action="Index">Comment</a>
+                                </li>*@
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="Index">AddFlight</a>
+                                </li>
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="Search">Flights</a>
+                            </li>
+
+                            <partial name="_LoginPartial" />
+
+
+                        </ul>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
+                        <a href="#footer" class="section-btn">Learn More</a>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- HOME -->
+
+    <div class="container" style="padding-top: 100px;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer id="footer" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3 col-sm-8">
+                    <div class="footer-info">
+                        <div class="section-title">
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s">Learn more</h2>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TermsOfUse">Terms of use</a>
+                            </li>
+                            @*<li><a href="termsofuse.html" class="smoothScroll">Terms of use</a></li>*@
+                            @*<li><a href="privacypolicy.html" class="smoothScroll">Privacy Policy</a></li>*@
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="PrivacyPolicy">Privacy Policy</a>
+                            </li>
+                            <li><a href="" class="smoothScroll">FAQ</a></li>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8">
+                    <div class="footer-info">
+                        <div class="section-title">
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s">Details</h2>
+                        </div>
+                        <address class="wow fadeInUp" data-wow-delay="0.4s">
+                            <p>090-080-0650 | 090-070-0430</p>
+                            <p><a href="dannypatza@yahoo.com">flyemirates@agency.com</a></p>
+                            <div style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Craiova+(Craiova)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                        </address>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-8">
+                    <div class="footer-info footer-logo">
+                        <div class="section-title">
+                            <div style="height: 250px"><<img src="/images/logo.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <ul class="wow fadeInUp social-icon" data-wow-delay="0.4s">
+                        <li>
+                            <a href="https://www.facebook.com " target="_blank "><i class="fab fa-facebook-f "></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/ " target="_blank "><i class="fab fa-twitter "></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/?hl=ro " target="_blank "><i class="fab fa-instagram "></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/?gl=RO&hl=ro " target="_blank "><i class="fab fa-youtube "></i></a>
+                        </li>
+                    </ul>
+
+
+                    <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s">
+                        <p>
+                            <br>Copyright &copy; 2020 <br>Fly Emirates
+
+                            <br><br>Airline Reservation
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/smoothscroll.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/sit.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
+
+    @*@if (User.Identity.IsAuthenticated)
+        {
+            <script>
+                function getParameterByName(name, url) {
+                    if (!url) url = window.location.href;
+                    name = name.replace(/[\[\]]/g, '\\\$&');
+                    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                        results = regex.exec(url);
+                    if (!results) return null;
+                    if (!results[2]) return '';
+                    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+                }
+
+
+                if (getParameterByName('loggedIn') === 'true') {
+                    $("#login-confirmation-modal").modal('toggle');
+                }
+            </script>
+        }*@
+    
+
+
+</body>
+</html>

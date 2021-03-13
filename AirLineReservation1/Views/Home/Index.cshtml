@@ -1,0 +1,484 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+
+<section id="home" class="slider" data-stellar-background-ratio="0.5">
+    <div class="row">
+
+        <div class="owl-carousel owl-theme">
+
+            <div class="item item-first">
+                <div class="caption">
+                    <div class="container">
+                        <div class="col-md-8 col-sm-12">
+                            <h3>New site for Airline Reservation</h3>
+                            <h1>Enjoy the offers of our agency every day</h1>
+                            <a href="#contact" class="section-btn btn btn-default smoothScroll">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-second">
+                <div class="caption">
+                    <div class="container">
+                        <div class="col-md-8 col-sm-12">
+                            <h3>The perfect flight</h3>
+                            <h1>The best price can be here!</h1>
+                            <a href="#ticket" class="section-btn btn btn-default smoothScroll">Discover the flight</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-third">
+                <div class="caption">
+                    <div class="container">
+                        <div class="col-md-8 col-sm-12">
+                            <h3>Fly Emirates Agency</h3>
+                            <h1>The mission of our agency is to offer you a faster navigation using this site</h1>
+                        </div>
+                        <div class="rate">
+                            <h3>Review Rating</h3>
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1">1 star</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+               
+@if (TempData["Success"] != null)
+{
+    <script>
+                        window.onload = function () {
+                            alert("@TempData["Success"]");
+                            setTimeout(2000);
+                        };
+    </script>
+}
+<!-- Airlines-->
+<section id="airlines" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Fly Emirates Agency</h2>
+                    <h4>Airlines</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="airlines-thumb wow fadeInUp" data-wow-delay="0.2s">
+                    <img src="images/logo3.png" class="img-responsive" alt="">
+                    <div class="airlines-hover">
+                        <div class="airlines-item">
+                            <h4>
+                                Swiss International Air Lines AG (stylised as SWISS) is the flag carrier of Switzerland, operating scheduled services in Europe and to North America, South America, Africa and Asia. Zurich Airport serves as the hub, Geneva
+                                Airport as a focus city.
+                            </h4>
+                            <ul class="social-icon">
+                                <li>
+                                    <a href=" https://ro.linkedin.com/company/swiss-international-air-lines" target="_blank "><i class="fab fa-linkedin "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://ro-ro.facebook.com/flyswiss" target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="airlines-info">
+                    <h3>Swiss</h3>
+                    <address>   <p><a href="https://www.swiss.com/bg/en">https://www.swiss.com</a></p></address>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="airlines-thumb wow fadeInUp" data-wow-delay="0.4s">
+                    <img src="images/logo4.png" class="img-responsive" alt="">
+                    <div class="airlines-hover">
+                        <div class="airlines-item">
+                            <h4>
+                                Qatar Airways Company Q.C.S.C. is an airline company. This airline is based in Doha, the capital city of Qatar. Its office can be found at Hamad International Airport. There will be another airport in Doha in short time.
+                                It is one of the fastest growing airlines, and one of the four airlines that are rated "five stars" because of its good service.
+                            </h4>
+                            <ul class="social-icon">
+                                <li>
+                                    <a href="https://www.linkedin.com/company/qatar-airways" target="_blank "><i class="fab fa-linkedin "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/qatarairways/" target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="airlines-info">
+                    <h3>Qatar Airways</h3>
+                    <address>   <p><a href="https://www.qatarairways.com/en/homepage.html">www.qatarairways.com</a></p></address>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="airlines-thumb wow fadeInUp" data-wow-delay="0.6s">
+                    <img src="images/logo5.png" class="img-responsive" alt="">
+                    <div class="airlines-hover">
+                        <div class="airlines-item">
+                            <h4>
+                                Turkish Airlines is the national flag carrier airline of Turkey. As of August 2019, it operates scheduled services to 315 destinations in Europe, Asia, Africa, and the Americas, making it the largest mainline carrier in
+                                the world by number of passenger destinations.The airline serves more destinations non-stop from a single airport than any other airline in the world,and flies to 126 countries, more than any other airline.
+                            </h4>
+                            <ul class="social-icon">
+                                <li>
+                                    <a href="https://www.linkedin.com/company/turkish-airlines" target="_blank "><i class="fab fa-linkedin "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/TurkishAirlines/" target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="airlines-info">
+                    <h3>Turkish Airlines</h3>
+                    <address>   <p><a href="https://www.turkishairlines.com/">turkishairlines.com</a></p></address>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Tcket-->
+<section id="ticket" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Price Tickets</h2>
+                    <h4>Airplanes &amp; Flights</h4>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- Ticket -->
+                <div class="price-ticket">
+                    <a href="images/flyemirates.jpg" class="image-popup" title="Fly Emirates Ticket">
+                        <img src="images/flyemirates.jpg" class="img-responsive" alt="">
+
+                        <div class="ticket-info">
+                            <div class="ticket-item">
+
+                                <h3>Fly Emirates</h3>
+                                <p>Bucharest-Dubai</p>
+                            </div>
+                            <div class="ticket-price">
+                                <span>€1.969</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- Ticket -->
+                <div class="price-ticket">
+                    <a href="images/swiss.jpg" class="image-popup" title="Swiss Ticket">
+                        <img src="images/swiss.jpg" class="img-responsive" alt="">
+
+                        <div class="ticket-info">
+                            <div class="ticket-item">
+                                <h3>Swiss</h3>
+                                <p>Bucharest-Dubai</p>
+                            </div>
+                            <div class="ticket-price">
+                                <span>€800</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!-- Ticket -->
+                <div class="price-ticket">
+                    <a href="images/tarom.jpg" class="image-popup" title="Tarom Ticket">
+                        <img src="images/tarom.jpg" class="img-responsive" alt="">
+
+                        <div class="ticket-info">
+                            <div class="ticket-item">
+                                <h3>Tarom</h3>
+                                <p>Timisoara-Dubai</p>
+                            </div>
+                            <div class="ticket-price">
+                                <span>€1000</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- Ticket -->
+                <div class="price-ticket">
+                    <a href="images/tarom.jpg" class="image-popup" title="Tarom Ticket">
+                        <img src="images/tarom.jpg" class="img-responsive" alt="">
+
+                        <div class="ticket-info">
+                            <div class="ticket-item">
+                                <h3>Tarom</h3>
+                                <p>Bucharest-Londra</p>
+                            </div>
+                            <div class="ticket-price">
+                                <span>€200</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- Ticket -->
+                <div class="price-ticket">
+                    <a href="images/Turkish.jpg" class="image-popup" title="Turkish Ticket">
+                        <img src="images/Turkish.jpg" class="img-responsive" alt="">
+
+                        <div class="ticket-info">
+                            <div class="ticket-item">
+                                <h3>Turkish</h3>
+                                <p>Bucharest-Istanbul</p>
+                            </div>
+                            <div class="ticket-price">
+                                <span>€500</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!-- Ticket -->
+                <div class="price-ticket">
+                    <a href="images/aeroflot.jpg" class="image-popup" title="Aeroflot Ticket">
+                        <img src="images/aeroflot.jpg" class="img-responsive" alt="">
+
+                        <div class="ticket-info">
+                            <div class="ticket-item">
+                                <h3>Aeroflot</h3>
+                                <p>Paris-Londra</p>
+                            </div>
+                            <div class="ticket-price">
+                                <span>€300</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!--TESTIMONIAL-->
+<section id="testimonial" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Testimonials</h2>
+                </div>
+            </div>
+
+            <div class="col-md-offset-2 col-md-8 col-sm-12">
+                <div class="owl-carousel owl-theme">
+
+
+                    <span class="single-img img-three">
+                        <span class="img-text">
+                            <h4>Dani Pata</h4>
+                            <p>I am satisfied with this site. I recommend it</p>
+                            <p>
+                                <li>
+                                    <a href="https://www.facebook.com " target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/ " target="_blank "><i class="fab fa-twitter "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/?hl=ro " target="_blank "><i class="fab fa-instagram "></i></a>
+                                </li>
+                            </p>
+                        </span>
+                    </span>
+
+                    <span class="single-img img-four">
+                        <span class="img-text">
+                            <h4>--Alex--</h4>
+                            <p>I can say that I am totally satisfied with this site. It's very fast and easy to use. Congratulations!</p>
+                            <p>
+                                <li>
+                                    <a href="https://www.facebook.com " target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/ " target="_blank "><i class="fab fa-twitter "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/?hl=ro " target="_blank "><i class="fab fa-instagram "></i></a>
+                                </li>
+                            </p>
+                        </span>
+                    </span>
+
+                    <span class="single-img img-two">
+                        <span class="img-text">
+                            <h4>Andrei Negret</h4>
+                            <p>I am excited about this site. It offers very good services and is very easy to use.</p>
+                            <p>
+                                <li>
+                                    <a href="https://www.facebook.com " target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/ " target="_blank "><i class="fab fa-twitter "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/?hl=ro " target="_blank "><i class="fab fa-instagram "></i></a>
+                                </li>
+                            </p>
+                        </span>
+                    </span>
+                    <span class="single-img img-one">
+                        <span class="img-text">
+                            <h4>Alin Stanciu</h4>
+                            <p>A very good site. Book quickly and easily. It has great prices. Congratulations!</p>
+                            <p>
+                                <li>
+                                    <a href="https://www.facebook.com " target="_blank "><i class="fab fa-facebook-f "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/ " target="_blank "><i class="fab fa-twitter "></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/?hl=ro " target="_blank "><i class="fab fa-instagram "></i></a>
+                                </li>
+                            </p>
+                        </span>
+                    </span>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <!---video--->
+            <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
+                <div id="google-map">
+                    <!-- <iframe src="" allowfullscreen></iframe> -->
+                    <video width="560" height="390" controls>
+                        <source src="./videos/Top 10 Best Airlines in The World 2020 - YouTube.mp4" allowfullscreen type="video/mp4">
+                        <source src="./videos/Top 10 Best Airlines in The World 2020 - YouTube.ogg" allowfullscreen type="video/ogg">
+                    </video>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <h2>Contact Us</h2>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <form action="#" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+
+                    <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
+                    <h6 class="text-success">Your message has been sent successfully.</h6>
+
+                    <!-- IF MAIL NOT SENT -->
+                    <h6 class="text-danger">E-mail must be valid and message must be longer than 1 character.</h6>
+
+                    @*<div class="col-md-6 col-sm-6">
+                        <input type="text" class="form-control" id="cf-name" name="name" placeholder="Full name">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <input type="email" class="form-control" id="cf-email" name="email" placeholder="Email address">
+                    </div>*@
+
+                    <div class="col-md-12 col-sm-12">
+                        <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
+
+                        <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell about your project"></textarea>
+
+
+                    </div>
+                </form>
+                <button class="form-control" id="cf-submit">Send Message</button>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+
+
+<!-- Modal -->
+@*<div class="modal fade" id="login-confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="login-confirmation-modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You have been successfully logged!
+            </div>
+            <div class="modal-footer">
+
+
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+

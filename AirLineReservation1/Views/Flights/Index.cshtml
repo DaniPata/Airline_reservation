@@ -1,0 +1,180 @@
+﻿@model IEnumerable<AirLineReservation1.Models.Flight>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add flights</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/css/addflights.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Activate tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Select/Deselect checkboxes
+        var checkbox = $('table tbody input[type="checkbox"]');
+        $("#selectAll").click(function () {
+            if (this.checked) {
+                checkbox.each(function () {
+                    this.checked = true;
+                });
+            } else {
+                checkbox.each(function () {
+                    this.checked = false;
+                });
+            }
+        });
+        checkbox.click(function () {
+            if (!this.checked) {
+                $("#selectAll").prop("checked", false);
+            }
+        });
+    });
+</script>
+
+
+
+<div class="container" style=" margin-left: -260px; ">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Manage <b>Flights</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn-success" asp-action="Create"><i class="material-icons">&#xE147;</i> <span>Add New Flights</span></a>
+                 
+            </div>
+        </div>
+        <table id="paginationNumbers" class="table" table-striped table-hover>
+            <thead>
+                <tr>
+                    <th>
+                        <span class="custom-checkbox">
+                            <input type="checkbox" id="selectAll">
+                            <label for="selectAll"></label>
+                        </span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Aircraft)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Departure)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DepartureTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Arrival)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArrivalTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Class)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Capacity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RemainSeats)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        <span class="custom-checkbox">
+                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                            <label for="checkbox1"></label>
+                        </span>
+                    </td>
+                   
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Aircraft)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Departure)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepartureTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Arrival)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ArrivalTime)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.Class)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Capacity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RemainSeats)
+                        </td>
+                        <td>
+                            <a class="edit" asp-action="Edit" asp-route-id="@item.FlightId"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a class="delete" asp-action="Delete" asp-route-id="@item.FlightId"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        @*<div class="clearfix">
+            <div class="hint-text">showing <b>1</b> out of <b>25</b> entries</div>
+            <ul class="pagination">
+                <li class="page-item disabled"><a href="#">previous</a></li>
+                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                <li class="page-item"><a href="#" class="page-link">next</a></li>
+            </ul>
+        </div>*@
+       
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#paginationNumbers').DataTable({
+            "pagingType": "full_numbers"
+        });
+    });
+</script>

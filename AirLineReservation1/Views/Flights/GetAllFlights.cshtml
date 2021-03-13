@@ -1,0 +1,129 @@
+﻿@*@{
+        ViewData["Title"] = "GetAllFlights";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+
+@model IEnumerable<AirLineReservation1.Models.Flight>
+
+@{
+    ViewData["Title"] = "Flights";
+}
+
+<title>SearchAllFlights</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/css/util.css">
+<link rel="stylesheet" type="text/css" href="~/css/search.css">
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table class="table">
+                    <thead>
+                        <tr class="table100-head">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Aircraft)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Departure)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DepartureTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Arrival)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ArrivalTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Class)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Capacity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RemainSeats)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Aircraft)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Departure)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DepartureTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Arrival)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Class)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Capacity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RemainSeats)
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!--===============================================================================================-->
+                <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="~/vendor/bootstrap/js/popper.js"></script>
+                <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="~/vendor/select2/select2.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="~/js/search.js"></script>
+
+            </div>
+        </div>
+    </div>
+</div>

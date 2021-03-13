@@ -1,0 +1,45 @@
+﻿@*@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+<header>
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <p class="text-danger">You do not have access to this resource.</p>
+</header>*@
+@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+<header>
+
+                    @{
+                        if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a id="login" asp-area="Identity" asp-page="/Account/Login">Log In</a></li>
+                        }
+                    }
+
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        <div id="wrapper">
+            <section id="content">
+                <div class="container">
+                    <div class="col-md-12" style="text-align:center;">
+                        <h1 class="text-danger">@ViewData["Title"]</h1>
+                        <p class="text-danger">You do not have access to this resource. Redirecting to home page...</p>
+                        <script>
+                                window.setTimeout(function () {
+                                    window.location.href = '/';
+                                }, 1000);
+                        </script>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>

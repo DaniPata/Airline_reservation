@@ -1,0 +1,135 @@
+﻿@model AirLineReservation1.Models.FlightModel.FlightViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    input#Arrival {
+        margin-left: 61px;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Button.css">
+<div style="text-align: center">
+    @using (@Html.BeginForm("Search", "Flights", FormMethod.Get))
+    {
+        <h3>Filter trips</h3> <br />
+        <p>
+            <b>Departure&emsp;&emsp;&ensp;</b> @Html.TextBox("Departure", null, new { style = "color:black" })
+        </p>
+
+        <p>
+            <b>Arrival</b> @Html.TextBox("Arrival", null, new { style = "color:black" })
+        </p>
+
+
+        <p>
+            <label for="ArrivalTime"><b>Arrival Time  </b></label>
+            <input type="date" id="arrivaltime" name="arrivaltime">
+        </p>
+
+        <input type="submit" class="btn btn-info" value="Search" />
+        <br /><br /><br />
+    }
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Aircraft")
+            </th>
+            <th>
+                @Html.DisplayName("Date")
+            </th>
+            <th>
+                @Html.DisplayName("Departure")
+            </th>
+            <th>
+                @Html.DisplayName("DepartureTime")
+            </th>
+            <th>
+                @Html.DisplayName("Arrival")
+            </th>
+            <th>
+                @Html.DisplayName("ArrivalTime")
+            </th>
+            <th>
+                @Html.DisplayName("Class")
+            </th>
+            <th>
+                @Html.DisplayName("Capacity")
+            </th>
+            <th>
+                @Html.DisplayName("Price")
+            </th>
+            <th>
+                @Html.DisplayName("Remain Seats")
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Flights.Count() == 0)
+        {
+            <tr>
+                <td colspan="4">
+                    No records match search criteria
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model.Flights)
+            {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Aircraft)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Departure)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.DepartureTime)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => item.Arrival)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.ArrivalTime)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Class)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.RemainSeats)
+        </td>
+        <td>
+            <a asp-action="BookSeat" asp-route-id="@item.FlightId" asp-controller="SearchFlight">
+                <input type="submit" class="btn btn-info" value="Book Seat" />
+            </a>
+        </td>
+    </tr>
+            }
+        }
+    </tbody>
+</table>

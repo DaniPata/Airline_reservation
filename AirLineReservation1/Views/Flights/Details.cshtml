@@ -1,0 +1,85 @@
+﻿@model AirLineReservation1.Models.Flight
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Aircraft)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Aircraft)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Departure)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departure)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepartureTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Arrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Arrival)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RemainSeats)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RemainSeats)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FlightId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
